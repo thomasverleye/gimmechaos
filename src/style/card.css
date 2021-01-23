@@ -1,0 +1,96 @@
+.card {
+	display: none;
+	text-align: center;
+}
+
+.card__renderer {
+	display: inline-block;
+	height: calc(100vw / 91 * 61);
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 100vh;
+	max-width: fit-content;
+	width: auto;
+}
+
+.card.show-interface .card__renderer {
+	border-left: 1px dashed;
+	border-right: 1px dashed;
+	position: relative;
+}
+
+.card.show-interface .card__renderer::after {
+	border: 1px solid black;
+	content: '';
+	height: calc(100% / 61 * 54.912);
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: calc(100% / 91 * 84.912);
+}
+
+.card__renderer__canvas {
+	display: block;
+	height: 100%;
+	width: auto;
+}
+
+.card.show-interface .card__renderer::before {
+	border: 1px solid #ED1E8C;
+	content: '';
+	height: calc(100% / 61 * 48.912);
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: calc(100% / 91 * 78.912);
+}
+
+.card__explanation {
+	background-color: black;
+	color: white;
+}
+
+.card__form {
+	display: none;
+}
+
+.card.show-interface .card__form {
+	display: block;
+	text-align: left;
+}
+
+.card__toggle {
+	position: absolute;
+	right: 2rem;
+	top: 2rem;
+	z-index: 5;
+}
+
+.card__toggle::before {
+	content: 'Edit';
+	text-transform: uppercase;
+}
+
+.card.show-interface .card__toggle::before {
+	content: 'Close';
+}
+
+@media (min-width: 1024px) {
+	.card__form {
+		background-color: rgba(255, 255, 255, 0.8);
+		left: 0;
+		position: absolute;
+		transform: translateY(-100%);
+		width: 100%;
+	}
+}
+
+.card__controls {
+	height: 100%;
+}
+
+.card__explanation {
+	text-align: left;
+}

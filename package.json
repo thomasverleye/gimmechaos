@@ -1,0 +1,39 @@
+{
+	"name": "site",
+	"version": "1.0.0",
+	"description": "",
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "webpack serve",
+		"build": "webpack"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/thomasverleye/gimmechaos.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/thomasverleye/gimmechaos/issues"
+	},
+	"homepage": "https://github.com/thomasverleye/gimmechaos#readme",
+	"browserslist": [
+		"defaults"
+	],
+	"devDependencies": {
+		"clean-webpack-plugin": "^3.0.0",
+		"css-loader": "^5.0.1",
+		"html-webpack-plugin": "^4.5.1",
+		"postcss": "^8.2.4",
+		"postcss-loader": "^4.1.0",
+		"postcss-preset-env": "^6.7.0",
+		"style-loader": "^2.0.0",
+		"ts-loader": "^8.0.14",
+		"typescript": "^4.1.3",
+		"webpack": "^5.15.0",
+		"webpack-cli": "^4.3.1",
+		"webpack-dev-server": "^3.11.2"
+	}
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		<%= htmlWebpackPlugin.options.title %>
+	</title>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		section {
+			box-sizing: border-box;
+			padding: 1.25rem;
+		}
+
+		@media (min-width: 1024px) {
+			section {
+				padding: 4rem 5rem;
+			}
+		}
+
+		h1,
+		h2,
+		h3,
+		p {
+			margin-top: 0;
+		}
+
+		h1,
+		h2,
+		h3,
+		p,
+		a,
+		li {
+			font-family: 'Times New Roman', Times, serif;
+		}
+
+		p,
+		a,
+		li {
+			font-size: 1.125rem;
+			line-height: 1.3333333;
+		}
+
+		.u-text-block {
+			max-width: 420px;
+		}
+
+		.hero {
+			display: block;
+			position: relative;
+			height: calc(100vw / 91 * 61);
+			max-height: 100vh;
+			background-color: tomato;
+			color: black;
+		}
+
+		.hero__title {
+			position: absolute;
+			left: 71%;
+			top: 72%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			font-size: 5vw;
+		}
+
+		.l-about {
+			column-gap: 2rem;
+			display: grid;
+			min-height: 100vh;
+		}
+
+		.l-about__text,
+		.l-about__projects,
+		.l-about__data {
+			max-width: 420px;
+		}
+
+		@media (min-width: 1024px) {
+			.l-about {
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto 1fr;
+			}
+
+			.l-about__data {
+				align-self: end;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header class="hero" id="hero">
+		<h1 class="hero__title">Gimme<br>Chaos</h1>
+	</header>
+
+	<div class="card" id="card">
+		<div class="card__renderer">
+			<canvas class="card__renderer__canvas" id="renderer"></canvas>
+		</div>
+
+		<form class="card__form" id="form">
+			<section>
+				<fieldset class="card__controls controls" id="controls">
+					<div class="controls__columns">
+						<div class="controls__columns__item">
+							<p>Choose a logo:</p>
+							<select name="scribble" id="scribble">
+								<option value="scribble-0">Scribble 0</option>
+							</select>
+							<br>
+							<input name="image" id="image" type="file" accept="image/png">
+						</div>
+
+						<div class="controls__columns__item">
+							<p>Pick a color:</p>
+							<input name="background" id="background" type="color">
+							<label for="background">Background color</label><br>
+							<input name="color" id="color" type="color">
+							<label for="color">Logo color</label>
+						</div>
+
+						<div class="controls__columns__item">
+							<p>Set scale &amp; position</p>
+							<input name="scale" min="0.5" max="5" step="0.125" id="scale" type="range">
+							<label for="scale">Scale</label><br>
+							<input name="x" min="0" max="100" step="0.5" id="x" type="range">
+							<label for="x">X-axis</label><br>
+							<input name="y" min="0" max="100" step="0.5" id="y" type="range">
+							<label for="y">Y-axis</label>
+						</div>
+
+						<div class="controls__columns__item">
+							<p>You're done?</p>
+							<button id="export">Export to pdf</button><br>
+							<button id="share">Share it with me</button>
+						</div>
+
+					</div>
+				</fieldset>
+			</section>
+		</form>
+
+		<button class="card__toggle" show-interface-toggle></button>
+
+		<section class="card__explanation">
+			<div class="u-text-block">
+				<h2>Design my business card</h2>
+				<p>
+					As a webdeveloper I occupy my time with developing pretty webdesigns.<br>
+					It's up to the designers who I work with to deliver something that looks nice and I'll make it work
+					for them.
+				</p>
+				<p>
+					At the top of my website, you can put your astetic skillset to good use and design the businesscard
+					for a web developer <strong>YOU</strong> would like to collaborate with.
+				</p>
+				<button show-interface-toggle>Let's get creative 👨‍🎨</button>
+			</div>
+		</section>
+	</div>
+
+	<section class="l-about">
+		<div class="l-about__text">
+			<h1>Gimme Chaos.</h1>
+
+			<p>
+				Hi, I'm Thomas Verleye, freelance developer from Antwerp (🇧🇪). I work for <a
+					href="https://www.mrhenry.be/" rel="noopener noreferrer nofollow">Mr. Henry 🏀</a>, aside from that
+				I occupy my time doing freelance work.
+			</p>
+
+			<p>
+				I call myself a "creative webdeveloper" because what I love to do is being creative with code and give a
+				webdesign that shiny look ✨ and smooth experience 🧈.<br>
+				Even when a webdesign has a less obvious look, I'll make it work. That's why I've called my brand
+				<em>Gimme Chaos</em>, I like to create order inside "chaos".<br>
+			</p>
+
+			<blockquote>
+				<h3>Because, the web doesn't have to look boring, <em>right?</em></h3>
+			</blockquote>
+
+			<p>
+				So, in case you need a webdeveloper who has a lot of experience with creative web projects, I'd love to
+				work
+				togheter.
+			</p>
+
+			<p>
+				Contact me by <a href="mailto:info@thomasverleye.be">email</a>.<br>
+				Give me a follow on <a href="https://github.com/thomasverleye/"
+					rel="noopener noreferrer nofollow">GitHub</a>.
+			</p>
+		</div>
+
+		<div class="l-about__projects">
+			<p>
+				Some cases of the most recent projects I worked on:
+			<ul>
+				<li>
+					<a href="https://impulse.be/" rel="noopener noreferrer nofollow">
+						Portfolio voor IMPULS(E)
+					</a>
+				</li>
+				<li>
+					<a href="https://yellowbird.brussels/" rel="noopener noreferrer nofollow">
+						Website voor yellowbird
+					</a>
+				</li>
+			</ul>
+			</p>
+		</div>
+
+		<div class="l-about__data">
+			<p>
+				GIMME CHAOS<br>
+				Mechelsesteenweg 69 Bus 7<br>
+				2018 Antwerpen<br>
+				BTW: BE0724958105<br>
+			</p>
+		</div>
+	</section>
+</body>
+
+</html>
