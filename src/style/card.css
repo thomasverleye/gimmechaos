@@ -55,14 +55,10 @@
 	width: calc(100% / 91 * 78.912);
 }
 
-.card__explanation {
-	background-color: black;
-	color: white;
-}
-
 .card__form {
 	display: none;
 	background-color: white;
+	border-bottom: 1px solid black;
 }
 
 .card__form select,
@@ -111,8 +107,4 @@
 
 .card__controls {
 	height: 100%;
-}
-
-.card__explanation {
-	text-align: left;
 }

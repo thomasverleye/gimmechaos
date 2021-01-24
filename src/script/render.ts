@@ -3,6 +3,14 @@ import { scribbles } from './scribbles';
 import { CARD_WIDTH, CARD_HEIGHT, CARD_BLEED, LOGO_MAX_DIMENSION_HORIZONTAL, LOGO_MAX_DIMENSION_VERTICAL } from './constants';
 import { formatRenderData } from './helpers/format-render-data';
 
+const faviconLinkElement = document.createElement('link');
+faviconLinkElement.type = 'image/x-icon';
+faviconLinkElement.rel = 'shortcut icon';
+document.getElementsByTagName('head')[0].appendChild(faviconLinkElement);
+const faviconCanvas = document.createElement('canvas');
+const faviconCtx = faviconCanvas.getContext('2d');
+
+
 export function render(canvas: HTMLCanvasElement, form: HTMLFormElement) {
 	const ctx = canvas.getContext('2d');
 	if (!ctx) {
@@ -39,7 +47,14 @@ export function render(canvas: HTMLCanvasElement, form: HTMLFormElement) {
 		// Background Color
 		ctx.fillStyle = data.background;
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		// Background Wrapper
 		document.getElementById('card').style.backgroundColor = data.background + 'ee';
+
+		// Favicon
+		faviconCtx.fillStyle = data.background;
+		faviconCtx.fillRect(0, 0, faviconCanvas.width, faviconCanvas.height);
+		faviconLinkElement.href = faviconCanvas.toDataURL();
 	};
 	logo.src = (data.image) ? data.image : scribbles[data.scribble];
 }

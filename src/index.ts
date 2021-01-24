@@ -65,6 +65,7 @@ import { render } from './script/render';
 		} else {
 			card.classList.add('show-interface');
 		}
+		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 	}
 
 	showInterfaceToggles.forEach((el) => {
