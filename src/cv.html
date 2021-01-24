@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		<%= htmlWebpackPlugin.options.title %>
+	</title>
+	<style>
+		body {
+			margin: 0;
+			overflow-x: hidden;
+		}
+
+		section {
+			box-sizing: border-box;
+			padding: 1.25rem;
+		}
+
+		@media (min-width: 1024px) {
+			section {
+				padding: 4rem 5rem;
+			}
+		}
+
+		h1,
+		h2,
+		h3,
+		p {
+			margin-top: 0;
+		}
+
+		h1,
+		h2,
+		h3,
+		p,
+		a,
+		li,
+		td {
+			font-family: 'Times New Roman', Times, serif;
+		}
+
+		p,
+		a,
+		li,
+		td {
+			font-size: 1.125rem;
+			line-height: 1.3333333;
+		}
+
+		.u-text-block {
+			max-width: 420px;
+		}
+
+		tr {
+			vertical-align: top;
+		}
+
+		table {
+			width: 100%;
+		}
+
+		td {
+			padding-bottom: 0.3125rem;
+			padding-top: 0.3125rem;
+			width: 50%;
+		}
+
+		td ul {
+			margin: 0;
+			padding-left: 1rem;
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<div class="u-text-block">
+			<h2>Personalia</h2>
+
+			<table>
+				<tr>
+					<td>Name</td>
+					<td>Thomas Verleye</td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td>Mechelsesteenweg 69<br>2018 ANTWERPEN</td>
+				</tr>
+				<tr>
+					<td>Phone</td>
+					<td>0495715179</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><a href="mailto:thomas@gimmechaos.dev">thomas@gimmechaos.dev</a></td>
+				</tr>
+				<tr>
+					<td>Date of birth</td>
+					<td>12 February 1993</td>
+				</tr>
+				<tr>
+					<td>Place of birth</td>
+					<td>Kortrijk</td>
+				</tr>
+				<tr>
+					<td>Nationality</td>
+					<td>Belgian</td>
+				</tr>
+				<tr>
+					<td>Driver License</td>
+					<td>B</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<section>
+		<div class="u-text-block">
+			<h2>Education</h2>
+
+			<table>
+				<tr>
+					<td>2011 — 2015</td>
+					<td>
+						<strong>Devine</strong>
+						<br>
+						Howest Kortrijk
+					</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<section>
+		<div class="u-text-block">
+			<h2>Work experience</h2>
+
+			<table>
+				<tr>
+					<td>2019 — present</td>
+					<td>
+						<strong>
+							<a href="https://gimmechaos.dev/" target="_blank">Gimme Chaos</a>
+						</strong>
+						<br>
+						Antwerp, BE
+						<br>
+						Part time freelance
+					</td>
+				</tr>
+				<tr>
+					<td>2018 — present</td>
+					<td>
+						<strong>
+							<a href="https://www.mrhenry.be/" target="_blank" rel="noopener noreferrer nofollow">Mr.
+								Henry</a>
+						</strong>
+						<br>
+						Antwerp, BE
+						<br>
+						Front-end development
+					</td>
+				</tr>
+				<tr>
+					<td>2015 — 2018</td>
+					<td>
+						<strong>
+							<a href="http://old.lunargravity.be/" target="_blank"
+								rel="noopener noreferrer nofollow">Lunar Gravity</a>
+						</strong>
+						<br>
+						Antwerp, BE
+						<br>
+						Front-end development
+					</td>
+				</tr>
+				<tr>
+					<td>2015</td>
+					<td>
+						<strong>
+							<a href="https://www.superrb.com/" target="_blank"
+								rel="noopener noreferrer nofollow">Superrb</a>
+						</strong>
+						<br>
+						Southsea, UK
+						<br>
+						Front-end development
+						<br>
+						Internship
+					</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<section>
+		<div class="u-text-block">
+			<h2>Skillset</h2>
+
+			<table>
+				<tr>
+					<td>CSS</td>
+					<td>
+						<ul>
+							<li>PostCSS</li>
+							<li>SASS</li>
+							<li>BEM-Methodologie</li>
+							<li>InuitCSS</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>JS</td>
+					<td>
+						<ul>
+							<li>TypeScript</li>
+							<li>Custom Elements</li>
+							<li>Lit HTML</li>
+							<li>Redux</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>Development tools</td>
+					<td>
+						<ul>
+							<li>Webpack</li>
+							<li>GitHub</li>
+							<li>Gulp</li>
+							<li>FFmpeg</li>
+							<li>SVGo</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>Advanced knowledge</td>
+					<td>
+						<ul>
+							<li>Accessibility</li>
+							<li>UX/UI</li>
+							<li>HTML Picture Tag</li>
+							<li>Img srcset</li>
+							<li>SVG</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>Software</td>
+					<td>
+						<ul>
+							<li>VS Code</li>
+							<li>Sketch</li>
+							<li>Zeplin</li>
+							<li>Photoshop</li>
+							<li>Illustrator</li>
+							<li>After Effects</li>
+							<li>Premiere</li>
+							<li>Media Encoder</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>CMS / Framework</td>
+					<td>
+						<ul>
+							<li>
+								<a href="https://wordpress.org/" target="_blank" rel="noopener noreferrer nofollow">
+									WordPress
+								</a>
+							</li>
+							<li>
+								<a href="https://craftcms.com/" target="_blank" rel="noopener noreferrer nofollow">
+									Craft
+								</a>
+							</li>
+							<li>
+								<a href="https://getkirby.com/" target="_blank" rel="noopener noreferrer nofollow">
+									Kirby
+								</a>
+							</li>
+							<li>
+								<a href="https://laravel.com/" target="_blank" rel="noopener noreferrer nofollow">
+									Laravel
+								</a>
+							</li>
+							<li>
+								<a href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer nofollow">
+									Ruby on Rails
+								</a>
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<section>
+		<div class="u-text-block">
+			<h2>Projects</h2>
+
+			<table>
+				<tr>
+					<td>Vedett</td>
+					<td>
+						Site:
+						<a href="https://www.vedett.com/" target="_blank" rel="noopener noreferrer nofollow">
+							vedett.com
+						</a>
+						<br>
+						Key Features:
+						<ul>
+							<li>Animations</li>
+							<li>Fast loading</li>
+							<li>Highly flexible content</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>Sereni</td>
+					<td>
+						Site:
+						<a href="https://www.sereni.be/" target="_blank" rel="noopener noreferrer nofollow">
+							sereni.be
+						</a>
+						<br>
+						Key Features:
+						<ul>
+							<li>Content heavy</li>
+							<li>Typography</li>
+							<li>Large component library</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>Hugo &amp; Marie</td>
+					<td>
+						Site:
+						<a href="https://www.hugoandmarie.com/" target="_blank" rel="noopener noreferrer nofollow">
+							hugoandmarie.com
+						</a>
+						<br>
+						Key Features:
+						<ul>
+							<li>Lots of images and videos</li>
+							<li>Stunning animations</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>Juist is Juist</td>
+					<td>
+						Site:
+						<a href="https://www.juistisjuist.be/" target="_blank" rel="noopener noreferrer nofollow">
+							juistisjuist.be
+						</a>
+						<br>
+						Key Features:
+						<ul>
+							<li>Snappy animations</li>
+							<li>Typography</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+</body>
+
+</html>

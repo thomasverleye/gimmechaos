@@ -3,7 +3,6 @@ import './style.css';
 import './script/helpers/random-data';
 import { render } from './script/render';
 
-
 (function () {
 	const hero = document.getElementById('hero');
 	const card = document.getElementById('card');
@@ -11,6 +10,9 @@ import { render } from './script/render';
 	const renderer = document.getElementById('renderer');
 	const controls = document.getElementById('controls');
 	const showInterfaceToggles = document.querySelectorAll('[show-interface-toggle]');
+
+	let downloadCounter = 0;
+	let reqId: number;
 
 	if (
 		!hero || !(hero instanceof HTMLElement) ||
@@ -25,6 +27,16 @@ import { render } from './script/render';
 
 	render(renderer, form);
 
+	const controlsChangeHandler = (e: MouseEvent) => {
+		if (!e.target || !(e.target instanceof HTMLElement) || !e.target.hasAttribute('id')) {
+			return;
+		}
+
+		render(renderer, form);
+	}
+
+	controls.addEventListener('change', controlsChangeHandler);
+
 	const controlsClickHandler = (e: MouseEvent) => {
 		if (!e.target || !(e.target instanceof HTMLElement) || !e.target.hasAttribute('id')) {
 			return;
@@ -32,17 +44,17 @@ import { render } from './script/render';
 
 		switch (e.target.id) {
 			case 'export':
-				// do the export stuff here
+				downloadCounter++;
+				const link = document.createElement('a');
+				link.download = `gimme-chaos-bussines-card-final-${downloadCounter}.png`;
+				link.href = renderer.toDataURL();
+				link.target = "_blank";
+				link.click();
 				return;
-				break;
 			case 'share':
 				// do the share stuff here
 				return;
-				break;
 		}
-
-		// run render function here
-		render(renderer, form);
 	}
 
 	controls.addEventListener('click', controlsClickHandler);

@@ -9,10 +9,10 @@ module.exports = {
 					supports: false,
 				},
 				features: {
-					'blank-pseudo-class': false,
-					'focus-visible-pseudo-class': false,
-					'focus-within-pseudo-class': false,
-					'has-pseudo-class': false
+					'blank-pseudo-class': true,
+					'focus-visible-pseudo-class': true,
+					'focus-within-pseudo-class': true,
+					'has-pseudo-class': true
 				}
 			}
 		],

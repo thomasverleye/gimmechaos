@@ -3,6 +3,7 @@ type RenderData = {
 	readonly y: number;
 	readonly scale: number;
 	readonly scribble: string;
+	readonly image: string | null;
 	readonly background: string;
 	readonly color: string;
 };
@@ -12,6 +13,7 @@ interface FormElements extends HTMLFormControlsCollection {
 	y: HTMLInputElement;
 	scale: HTMLInputElement;
 	scribble: HTMLInputElement;
+	image: HTMLInputElement;
 	background: HTMLInputElement;
 	color: HTMLInputElement;
 }
@@ -50,6 +52,14 @@ export function formatRenderData(form: HTMLFormElement): RenderData {
 		scribble = elements['scribble'].value;
 	}
 
+	let image: string | null = null;
+	if (
+		elements['image'].files &&
+		elements['image'].files.length > 0
+	) {
+		image = URL.createObjectURL(elements['image'].files[0]);
+	}
+
 	let background: string = '#000';
 	if (
 		typeof elements['background'].value === 'string'
@@ -69,6 +79,7 @@ export function formatRenderData(form: HTMLFormElement): RenderData {
 		y: y,
 		scale: scale,
 		scribble: scribble,
+		image: image,
 		background: background,
 		color: color
 	};

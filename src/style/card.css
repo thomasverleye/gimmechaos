@@ -1,6 +1,15 @@
 .card {
 	display: none;
 	text-align: center;
+	font-size: 0;
+}
+
+.card h2 {
+	font-size: 24px;
+}
+
+.card label {
+	font-size: 14px;
 }
 
 .card__renderer {
@@ -14,13 +23,11 @@
 }
 
 .card.show-interface .card__renderer {
-	border-left: 1px dashed;
-	border-right: 1px dashed;
 	position: relative;
 }
 
 .card.show-interface .card__renderer::after {
-	border: 1px solid black;
+	border: 1px dashed black;
 	content: '';
 	height: calc(100% / 61 * 54.912);
 	left: 50%;
@@ -37,7 +44,8 @@
 }
 
 .card.show-interface .card__renderer::before {
-	border: 1px solid #ED1E8C;
+	border: 1px solid white;
+	mix-blend-mode: difference;
 	content: '';
 	height: calc(100% / 61 * 48.912);
 	left: 50%;
@@ -54,6 +62,20 @@
 
 .card__form {
 	display: none;
+	background-color: white;
+}
+
+.card__form select,
+.card__form input,
+.card__form label {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 0.875rem;
+}
+
+.card__form label + select,
+.card__form input + label {
+	margin-left: 0.875rem;
 }
 
 .card.show-interface .card__form {

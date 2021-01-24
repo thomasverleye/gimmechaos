@@ -15,8 +15,14 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
+			filename: 'index.html',
 			title: 'Gimme Chaos',
 			template: './src/index.html'
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'cv/index.html',
+			title: 'Gimme Chaos — CV',
+			template: './src/cv.html'
 		}),
 	],
 	resolve: {
@@ -34,8 +40,12 @@ module.exports = {
 				use: ['style-loader', 'css-loader', 'postcss-loader'],
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
-				type: 'asset/resource',
+				test: /\.(svg)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+					},
+				],
 			},
 		],
 	},

@@ -3,9 +3,9 @@ import { setRandomColorValue } from './random-data/color';
 import { setRandomRangeValue } from './random-data/range';
 
 (function () {
-	const scribbles = document.getElementById('scribbles');
-	if (scribbles && scribbles instanceof HTMLSelectElement) {
-		setRandomSelectOption(scribbles);
+	const scribble = document.getElementById('scribble');
+	if (scribble && scribble instanceof HTMLSelectElement) {
+		setRandomSelectOption(scribble);
 	}
 
 	const background = document.getElementById('background');

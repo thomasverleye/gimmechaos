@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8" />
@@ -10,6 +10,7 @@
 	<style>
 		body {
 			margin: 0;
+			overflow-x: hidden;
 		}
 
 		section {
@@ -109,8 +110,11 @@
 					<div class="controls__columns">
 						<div class="controls__columns__item">
 							<p>Choose a logo:</p>
+							<label for="scribble">Pick one of mine:</label>
 							<select name="scribble" id="scribble">
 								<option value="scribble-0">Scribble 0</option>
+								<option value="scribble-1">Scribble 1</option>
+								<option value="scribble-2">Scribble 2</option>
 							</select>
 							<br>
 							<input name="image" id="image" type="file" accept="image/png">
@@ -119,7 +123,8 @@
 						<div class="controls__columns__item">
 							<p>Pick a color:</p>
 							<input name="background" id="background" type="color">
-							<label for="background">Background color</label><br>
+							<label for="background">Background color</label>
+							<br>
 							<input name="color" id="color" type="color">
 							<label for="color">Logo color</label>
 						</div>
@@ -136,8 +141,7 @@
 
 						<div class="controls__columns__item">
 							<p>You're done?</p>
-							<button id="export">Export to pdf</button><br>
-							<button id="share">Share it with me</button>
+							<button id="export" type="button">Download as image</button>
 						</div>
 
 					</div>
@@ -199,21 +203,7 @@
 		</div>
 
 		<div class="l-about__projects">
-			<p>
-				Some cases of the most recent projects I worked on:
-			<ul>
-				<li>
-					<a href="https://impulse.be/" rel="noopener noreferrer nofollow">
-						Portfolio voor IMPULS(E)
-					</a>
-				</li>
-				<li>
-					<a href="https://yellowbird.brussels/" rel="noopener noreferrer nofollow">
-						Website voor yellowbird
-					</a>
-				</li>
-			</ul>
-			</p>
+			<!-- Coming soon -->
 		</div>
 
 		<div class="l-about__data">

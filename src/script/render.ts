@@ -1,6 +1,6 @@
-import scribble0 from '../scribbles/scribble-0.svg';
+import { scribbles } from './scribbles';
 
-import { CARD_WIDTH, CARD_HEIGHT, CARD_BLEED, LOGO_MAX_DIMENSION } from './constants';
+import { CARD_WIDTH, CARD_HEIGHT, CARD_BLEED, LOGO_MAX_DIMENSION_HORIZONTAL, LOGO_MAX_DIMENSION_VERTICAL } from './constants';
 import { formatRenderData } from './helpers/format-render-data';
 
 export function render(canvas: HTMLCanvasElement, form: HTMLFormElement) {
@@ -16,10 +16,10 @@ export function render(canvas: HTMLCanvasElement, form: HTMLFormElement) {
 
 	const logo = new Image();
 	logo.onload = () => {
-		let renderWidth = LOGO_MAX_DIMENSION * data.scale;
+		let renderWidth = LOGO_MAX_DIMENSION_HORIZONTAL * data.scale;
 		let renderHeight = logo.naturalHeight / logo.naturalWidth * renderWidth;
 		if (logo.naturalHeight > logo.naturalWidth) {
-			renderHeight = LOGO_MAX_DIMENSION * data.scale;
+			renderHeight = LOGO_MAX_DIMENSION_VERTICAL * data.scale;
 			renderWidth = logo.naturalWidth / logo.naturalHeight * renderHeight;
 		}
 
@@ -41,5 +41,5 @@ export function render(canvas: HTMLCanvasElement, form: HTMLFormElement) {
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 		document.getElementById('card').style.backgroundColor = data.background + 'ee';
 	};
-	logo.src = scribble0;
+	logo.src = (data.image) ? data.image : scribbles[data.scribble];
 }
